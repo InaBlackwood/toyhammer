@@ -1,0 +1,175 @@
+/* **************** */
+/* Main menu styles */
+/* **************** */
+
+#maintitle-background:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-69deg, #c05805 -78%, #000000 109% );
+  transform: translate3d(0px, 7px, 0) scale(1.16);
+  filter: blur(12px);
+  opacity: 0.57;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+#maintitle-background::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+
+#maintitle-background {
+  position:absolute;left:0;right:0;height:100%;width: 100%;
+  background-image: url("../../assets/img/banner.jpg");
+  background-size: cover;
+}
+
+.neon {
+  overflow: hidden;
+  margin:0 auto;
+  text-align:center;
+}
+
+.neon-text {
+  font-family: tittle;
+  text-transform: uppercase;
+  position: relative;
+  user-select: none;
+  padding-left:10px;
+  display: block;
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flash linear 3s;
+  animation-iteration-count: 1;
+}
+
+.neon-text::before {
+  content: attr(data-text);
+  position: absolute;
+  color: white;
+  filter: blur(0.02em);
+  mix-blend-mode: difference;
+}
+
+.neon-spotlight {
+  opacity:0;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  right: 0px;
+  bottom: 0px;
+  background:
+    radial-gradient(
+      circle,
+      white,
+      transparent 25%
+    ) center / 25% 25%,
+    radial-gradient(
+      circle,
+      white,
+      gray 25%
+    ) center / 12.5% 12.5%;
+
+  animation: light 4s linear ;
+  animation-iteration-count:1;
+  mix-blend-mode: color-dodge;
+}
+
+.neon-gradient {
+  position: absolute;
+  background: linear-gradient(45deg, red, gold, darkred, gold, red);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: multiply;
+  margin-left: -15px;
+}
+
+#maintitle {
+  animation: titleAnimation 500ms linear;
+  animation-iteration-count:1;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
+  font-size:5em; /*todo:make 2.5 for responsive */
+  z-index: 30;
+  position: fixed;
+  padding-top:35vh; /* both properties removed on animation */
+  height: 100vh;
+  background-color: black;
+}
+
+#mainmenu {
+  width: 50%;
+  margin: 0.2rem auto;
+  font-size:1rem;
+}
+
+#mainmenu li {
+  margin: 0 auto;
+}
+
+#mainmenu a {
+  text-align: center;
+  margin: 0 auto;
+  font-family: mainMenu-bold;
+  text-decoration: none;
+  color:darkgoldenrod;
+  text-shadow: 0 0 10px red, 0 0 40px darkred;
+}
+
+#mainmenu a:hover {
+  animation: flicker steps(100) 1s infinite;
+  text-shadow: 0 0 10px red, 0 0 20px gold, 0 0 40px darkred, 0 0 80px gold;
+}
+
+/* ********** */
+/* Animations */
+/* ********** */
+
+@keyframes flicker {
+  50% {
+    color: white;
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+}
+
+@keyframes titleAnimation {
+  to {
+    padding-top:0vh;
+    font-size:2.5em;
+    height: 6.5rem;
+    background-size: cover;
+  }
+}
+
+@keyframes light {
+  from {
+    opacity:1;
+  }
+  to {
+    transform: translate(50%, 50%);
+    opacity:0;
+  }
+}
+
+@keyframes flash {
+  50% {
+    color: black;
+    filter: saturate(500%) hue-rotate(20deg);
+    text-shadow: #FC0 1px 0 10px;
+  }
+}
+
