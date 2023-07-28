@@ -1,1 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
+
+/**************/
+/* main fonts */
+/**************/
+
+@font-face {
+  font-family: text1;
+  src: url(./assets/fonts/CasablancaAntique.ttf);
+}
+@font-face {
+  font-family: text2;
+  src: url(./assets/fonts/CaslonAntique.ttf);
+}
+@font-face {
+  font-family: text2-bold;
+  src: url(./assets/fonts/CaslonAntique-Bold.ttf);
+}
+@font-face {
+  font-family: text2-italic;
+  src: url(./assets/fonts/CaslonAntique-Italic.ttf);
+}
+@font-face {
+  font-family: mainMenu;
+  src: url(./assets/fonts/OPTIFurst.otf);
+}
+@font-face {
+  font-family: mainMenu-bold;
+  src: url(./assets/fonts/OPTIFurst-Bold.otf);
+}
+@font-face {
+  font-family: capital;
+  src: url(./assets/fonts/DSFetteGotisch.ttf);
+}
+@font-face {
+  font-family: tittle;
+  src: url(./assets/fonts/Moria_DF.TTF);
+}
+
+/**********************************/
+/* common and main element styles */
+/**********************************/
+
+body {
+  background-color: black;
+}
+
+.fadeIn {
+  animation: showall 2s linear;
+  animation-iteration-count:1;
+  animation-fill-mode: forwards;
+  animation-delay: 4.5s;
+  opacity: 0;
+}
+
+@keyframes showall {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*******************************************/
+/* TODO: ready to move to other components */
+/*******************************************/
+
+#videoContainer {
+  height: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-bottom: 60%; /*todo: prepare this for responsive*/
+}
+
+#videoContainer a {
+  color:darkred;
+  text-shadow: 0 0 10px red, 0 0 40px darkred;
+}
+
+#videoContainer a:hover {
+  animation: flicker steps(100) 1s infinite;
+  text-shadow: 0 0 10px red, 0 0 20px gold, 0 0 40px darkred, 0 0 80px gold;
+}
+
+
+.innerTextBox {
+  color:#2e2300;background-color:#db9501;
+}
+
+#mainContents { scroll-margin-top: 6em; }
+#mainEvents { scroll-margin-top: 6em; }
